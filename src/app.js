@@ -5,6 +5,8 @@ const hbs = require('hbs')
 const forecast = require('./utils/forecast.js')
 const geocode = require('./utils/geocode.js')
 
+const port = process.env.PORT || 3000/*Port to run in heroku */
+ 
 console.log(__dirname)  /*Shows the directory path */
 //console.log(__filename) /*Shows the path of the entire file */
 //console.log(path.join(__dirname,'../public'));
@@ -128,6 +130,6 @@ app.get('*',(req,res)=>{    /*If no route match then this executes Always comes 
     })
 })
 
-app.listen(3000,()=>{
-    console.log('Server is up on port 3000')
+app.listen(port,()=>{
+    console.log('Server is up on port ' + port)
 })

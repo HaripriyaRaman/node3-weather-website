@@ -1,5 +1,3 @@
-console.log("Client side javascript file is loaded successfully")
-
 
 // fetch('http://localhost:3000/weather?address=!').then((res)=>{
 //     res.json().then((data)=>{
@@ -22,7 +20,8 @@ weatherForm.addEventListener('submit',(e)=>{
     
     e.preventDefault()
     const location = search.value
-    fetch('http://localhost:3000/weather?address=' + location).then((res)=>{
+    // fetch('http://localhost:3000/weather?address=' + location).then((res)=>{
+    fetch('/weather?address=' + location).then((res)=>{
     res.json().then((data)=>{
         if(data.error){
              message.textContent = data.error
